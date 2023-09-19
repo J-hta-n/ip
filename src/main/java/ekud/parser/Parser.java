@@ -182,7 +182,7 @@ public class Parser {
             LocalDateTime fromDateTime = this.parseDateTime(timings[0]);
             LocalDateTime toDateTime = this.parseDateTime(timings[1]);
             if (fromDateTime.isAfter(toDateTime) || fromDateTime.isEqual(toDateTime)) {
-                throw new EkudIllegalArgException("End should be later than start :(");
+                throw new EkudIllegalArgException("End date & time should be later than the start :(");
             }
             return taskList.addEvent(description, fromDateTime, toDateTime);
         } catch (IndexOutOfBoundsException | DateTimeParseException e) {
