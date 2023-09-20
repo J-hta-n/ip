@@ -69,7 +69,18 @@ public class DialogBox extends HBox {
     public static DialogBox getDukeDialog(String text, Image img) {
         var db = new DialogBox(text, img);
         db.flip();
+<<<<<<< Updated upstream
         db.setStyle(String.format("-fx-background-color: %s", DUKE_DIALOG_BG_COLOR));
+=======
+        db.dialog.setStyle(String.format(
+                "-fx-background-color: %s; -fx-background-radius: 20 20 20 20;"
+                + "-fx-padding: 12 12 12 12; -fx-margin: 0 100 0 0",
+                DUKE_DIALOG_BG_COLOR));
+        // Align the ekud dialog to the bottom left w.r.t the dialog box
+        db.setAlignment(Pos.CENTER_LEFT);
+        // Set right padding in dialog box so ekud dialog has some space from the right
+        db.setStyle("-fx-padding: 5 50 5 5;");
+>>>>>>> Stashed changes
         return db;
     }
 }
